@@ -1,0 +1,27 @@
+ja:
+  wiki_drafts:
+    label:
+      auto_save: "自動保存"
+      draft: "下書き"
+      draft_number: "下書き %{number}"
+      save: "保存"
+      restore: "復元"
+      delete: "削除"
+      error: "エラー"
+      path: "パス"
+      content: "内容"
+      slot: "スロット"
+      updated_at: "更新日時"
+      empty: "空"
+    message:
+      draft_saved: "下書きを保存しました。"
+      draft_restored: "下書きを復元しました。"
+      draft_not_found: "下書きが見つかりません。"
+      draft_deleted: "下書きを削除しました。"
+      confirm_overwrite_wiki: "下書きの内容でWikiを上書きしてもよいですか？"
+      confirm_overwrite_draft: "Wikiの内容で下書きを上書きしてもよいですか？"
+      confirm_delete: "下書きを削除しますか？"
+      error_invalid_slot: "無効なスロット番号です。"
+      error_save: "保存エラー"
+      error_restore: "復元エラー"
+      error_delete: "削除エラー"

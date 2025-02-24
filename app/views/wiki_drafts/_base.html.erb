@@ -1,0 +1,43 @@
+<% if User.current.logged? %>
+  <% content_for :header_tags do %>
+    <script>
+      var WikiDrafts = {
+        settings: {
+          maxStoredSlots: <%= Setting.plugin_redmine_wiki_drafts[:max_stored_slots].to_i %>,
+          autoSaveIntervalSeconds: <%= Setting.plugin_redmine_wiki_drafts[:auto_save_interval_seconds].to_i %>,
+        },
+        resources: {
+          t: {
+            label: {
+              autoSave: "<%= t("label.auto_save", scope: :wiki_drafts) %>",
+              draft: "<%= t("label.draft", scope: :wiki_drafts) %>",
+              save: "<%= t("label.save", scope: :wiki_drafts) %>",
+              restore: "<%= t("label.restore", scope: :wiki_drafts) %>",
+              delete: "<%= t("label.delete", scope: :wiki_drafts) %>",
+              error: "<%= t("label.error", scope: :wiki_drafts) %>",
+              path: "<%= t("label.path", scope: :wiki_drafts) %>",
+              content: "<%= t("label.content", scope: :wiki_drafts) %>",
+              slot: "<%= t("label.slot", scope: :wiki_drafts) %>",
+              updatedAt: "<%= t("label.updated_at", scope: :wiki_drafts) %>",
+              empty: "<%= t("label.empty", scope: :wiki_drafts) %>",
+            },
+            message: {
+              draftSaved: "<%= t("message.draft_saved", scope: :wiki_drafts) %>",
+              draftRestored: "<%= t("message.draft_restored", scope: :wiki_drafts) %>",
+              draftDeleted: "<%= t("message.draft_deleted", scope: :wiki_drafts) %>",
+              confirmOverwriteWiki: "<%= t("message.confirm_overwrite_wiki", scope: :wiki_drafts) %>",
+              confirmOverwriteDraft: "<%= t("message.confirm_overwrite_draft", scope: :wiki_drafts) %>",
+              confirmDelete: "<%= t("message.confirm_delete", scope: :wiki_drafts) %>",
+              errorInvalidSlot: "<%= t("message.error_invalid_slot", scope: :wiki_drafts) %>",
+              errorSave: "<%= t("message.error_save", scope: :wiki_drafts) %>",
+              errorRestore: "<%= t("message.error_restore", scope: :wiki_drafts) %>",
+              errorDelete: "<%= t("message.error_delete", scope: :wiki_drafts) %>",
+            }
+          }
+        }
+      }
+    </script>
+    <%= javascript_include_tag "wiki_drafts", plugin: "redmine_wiki_drafts" %>
+    <%= stylesheet_link_tag "wiki_drafts", plugin: "redmine_wiki_drafts", media: "all" %>
+  <% end %>
+<% end %>

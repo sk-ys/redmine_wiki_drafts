@@ -1,0 +1,8 @@
+<p class="">
+  <label for="settings[max_stored_slots]">Max stored slot:</label>
+  <%= number_field_tag 'settings[max_stored_slots]', @settings[:max_stored_slots], { step:1, min:0 } %>
+</p>
+<p class="">
+  <label for="settings[auto_save_interval_seconds]">Autosave interval (sec):</label>
+  <%= number_field_tag 'settings[auto_save_interval_seconds]', @settings[:auto_save_interval_seconds], { step:1, min:0 } %>
+</p>

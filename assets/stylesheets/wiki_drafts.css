@@ -1,0 +1,92 @@
+.jstb_draft {
+    background-image: url(../images/rebase_edit_16dp_333_FILL0_wght400_GRAD0_opsz20.svg);
+
+    &:hover {
+        background-image: url(../images/rebase_edit_16dp_000000_FILL0_wght400_GRAD0_opsz20.svg);
+    }
+}
+
+#draftMenuBox {
+    display: none;
+    position: absolute;
+
+    #draftMenu {
+        display: grid;
+        position: absolute;
+        z-index: 1000;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        grid-template-columns: repeat(4, auto);
+        align-items: center;
+        justify-items: start;
+        gap: 0 3px;
+        width: max-content;
+        border-radius: 5px;
+
+        &>div.draft-item {
+            display: contents;
+
+            .draft-label {
+                margin: 0 5px;
+            }
+
+            &:not(.empty) .draft-label {
+                font-weight: bold;
+            }
+
+            button {
+                width: 24px;
+                height: 24px;
+                padding: 4px;
+                background-color: #f7f7f7;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 0.7;
+                cursor: pointer;
+
+                &:hover:not([disabled]) {
+                    opacity: 1;
+                }
+
+                &[disabled] {
+                    cursor: not-allowed;
+                    background-color: #eee;
+                    color: #aaa;
+                }
+
+                &.draft-save {
+                    background-image: url(../images/save_16dp_000000_FILL0_wght400_GRAD0_opsz20.svg);
+
+                    &[disabled] {
+                        background-image: url(../images/save_16dp_AAA_FILL0_wght400_GRAD0_opsz20.svg);
+                    }
+                }
+
+                &.draft-delete {
+                    background-image: url(../images/delete_16dp_000000_FILL0_wght400_GRAD0_opsz20.svg);
+
+                    &[disabled] {
+                        background-image: url(../images/delete_16dp_AAA_FILL0_wght400_GRAD0_opsz20.svg);
+                    }
+                }
+
+                &.draft-restore {
+                    background-image: url(../images/history_16dp_000000_FILL0_wght400_GRAD0_opsz20.svg);
+
+                    &[disabled] {
+                        background-image: url(../images/history_16dp_AAA_FILL0_wght400_GRAD0_opsz20.svg);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    #draftPreview {
+        display: none;
+        position: absolute;
+    }
+}

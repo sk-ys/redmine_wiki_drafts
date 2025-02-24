@@ -1,0 +1,27 @@
+en:
+  wiki_drafts:
+    label:
+      auto_save: "Auto Save"
+      draft: "Draft"
+      draft_number: "Draft %{number}"
+      save: "Save"
+      restore: "Restore"
+      delete: "Delete"
+      error: "Error"
+      path: "Path"
+      content: "Content"
+      slot: "Slot"
+      updated_at: "Updated at"
+      empty: "Empty"
+    message:
+      draft_saved: "Draft saved."
+      draft_restored: "Draft restored."
+      draft_deleted: "Draft deleted."
+      draft_not_found: "Draft not found."
+      confirm_overwrite_wiki: "Are you sure you want to overwrite the wiki text with the draft?"
+      confirm_overwrite_draft: "Are you sure you want to overwrite the draft with the wiki text?"
+      confirm_delete: "Are you sure you want to delete the draft?"
+      error_invalid_slot: "Invalid slot number."
+      error_save: "Save error"
+      error_restore: "Restore error"
+      error_delete: "Delete error"
