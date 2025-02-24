@@ -162,19 +162,19 @@
     }
 
     // Start auto-save draft
-    const timerId = setInterval(() => {
-      storedContent = autoSaveDraft(jsToolBar, storedContent);
+    const timerId = setInterval(async () => {
+      storedContent = await autoSaveDraft(jsToolBar, storedContent);
       if (!jsToolBar.textarea) clearInterval(timerId);
     }, autoSaveIntervalSeconds * 1000);
 
     // Save draft when the textarea content changes.
-    jsToolBar.textarea.addEventListener("change", function () {
-      storedContent = autoSaveDraft(jsToolBar, storedContent);
+    jsToolBar.textarea.addEventListener("change", async () => {
+      storedContent = await autoSaveDraft(jsToolBar, storedContent);
     });
 
     // Save draft when the window is closed.
-    window.addEventListener("beforeunload", function (e) {
-      storedContent = autoSaveDraft(jsToolBar, storedContent);
+    window.addEventListener("beforeunload", async (e) => {
+      storedContent = await autoSaveDraft(jsToolBar, storedContent);
     });
   }
 
