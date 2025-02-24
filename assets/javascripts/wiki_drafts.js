@@ -6,6 +6,7 @@
   }
 
   const t = WikiDrafts.resources.t;
+  const relativeUrlRoot = WikiDrafts.settings.relativeUrlRoot;
 
   /**
    * Add buttons to the jsToolBar.
@@ -200,7 +201,7 @@
 
   async function loadDraft(slot) {
     const response = await $.ajax({
-      url: "/wiki_drafts/" + slot,
+      url: `${relativeUrlRoot}/wiki_drafts/${slot}`,
       dataType: "json",
     });
 
@@ -214,7 +215,7 @@
   // Function to load drafts and build the menu.
   async function loadDrafts(jsToolBar, background = false) {
     const response = await $.ajax({
-      url: "/wiki_drafts",
+      url: `${relativeUrlRoot}/wiki_drafts/`,
       dataType: "json",
     });
 
@@ -257,7 +258,7 @@
     if (text.trim() === "") return;
 
     $.ajax({
-      url: "/wiki_drafts/" + slot,
+      url: `${relativeUrlRoot}/wiki_drafts/${slot}`,
       type: "POST",
       data: { pathname: location.pathname, content: text },
       dataType: "json",
@@ -275,7 +276,7 @@
       jsToolBar.textarea.value = content;
     } else {
       const response = await $.ajax({
-        url: "/wiki_drafts/" + slot,
+        url: `${relativeUrlRoot}/wiki_drafts/${slot}`,
         dataType: "json",
       });
 
@@ -291,7 +292,7 @@
   // Function to handle draft deletion.
   function deleteDraft(slot) {
     $.ajax({
-      url: "/wiki_drafts/" + slot,
+      url: `${relativeUrlRoot}/wiki_drafts/${slot}`,
       type: "DELETE",
       dataType: "json",
       success: function (response) {

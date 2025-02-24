@@ -3,6 +3,7 @@
     <script>
       var WikiDrafts = {
         settings: {
+          relativeUrlRoot: "<%= Redmine::Utils.relative_url_root %>",
           maxStoredSlots: <%= Setting.plugin_redmine_wiki_drafts[:max_stored_slots].to_i %>,
           autoSaveIntervalSeconds: <%= Setting.plugin_redmine_wiki_drafts[:auto_save_interval_seconds].to_i %>,
         },
